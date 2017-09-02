@@ -51,6 +51,11 @@ public class TelaInicialActivity extends DebugActivity {
                     "Config",
                     Toast.LENGTH_SHORT).show();
         }
+        else if(id == R.id.action_share) {
+            Toast.makeText(TelaInicialActivity.this,
+                    "Compartilhar",
+                    Toast.LENGTH_SHORT).show();
+        }
         return super.onOptionsItemSelected(item);
     }
 
