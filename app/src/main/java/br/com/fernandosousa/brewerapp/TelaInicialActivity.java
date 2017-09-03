@@ -46,6 +46,8 @@ public class TelaInicialActivity extends DebugActivity {
             Toast.makeText(TelaInicialActivity.this,
                     "Buscar",
                     Toast.LENGTH_SHORT).show();
+            Intent it = new Intent(TelaInicialActivity.this, CadastroActivity.class);
+            startActivityForResult(it, 1);
         } else if(id == R.id.action_config) {
             Toast.makeText(TelaInicialActivity.this,
                     "Config",
@@ -59,5 +61,27 @@ public class TelaInicialActivity extends DebugActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+
+            if (resultCode == RESULT_OK) {
+                StringBuffer textoRetorno = new StringBuffer();
+                textoRetorno.append(data.getStringExtra("nomeCerveja"));
+                textoRetorno.append("\n");
+                textoRetorno.append(data.getStringExtra("tipoCerveja"));
+                textoRetorno.append("\n");
+                textoRetorno.append(data.getStringExtra("paisCerveja"));
+                textoRetorno.append("\n");
+                textoRetorno.append(data.getStringExtra("enderecoCerveja"));
+                textoRetorno.append("\n");
+                textoRetorno.append(data.getStringExtra("precoCerveja"));
+
+                TextView texto = (TextView)findViewById(R.id.textoInicial);
+                texto.setText(textoRetorno.toString());
+
+            }
+        }
+    }
 
 }
