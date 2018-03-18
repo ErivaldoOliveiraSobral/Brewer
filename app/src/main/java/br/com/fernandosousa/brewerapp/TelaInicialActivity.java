@@ -29,15 +29,24 @@ public class TelaInicialActivity extends DebugActivity {
         // Recupera a intent e os dados enviados na chamda da Activity
         Intent intent = getIntent();
         Bundle params = intent.getExtras();
-        String nome = params.getString("nome");
 
-        // Mostra o nome do usuário enviado no log e no Toast
-        Log.d(DEBUG_TAG, "Nome do usuário: " + nome);
-        Toast.makeText(TelaInicialActivity.this, "Nome do usuário: " + nome, Toast.LENGTH_LONG).show();
+        // verificar se existe parâmetros
+        if (params != null) {
+            String nome = params.getString("nome");
 
-        // Altera o TextView da tela com o nome do usuário
-        TextView texto = (TextView) findViewById(R.id.textoInicial);
-        texto.setText(nome);
+            // Mostra o nome do usuário enviado no log e no Toast
+            Log.d(DEBUG_TAG, "Nome do usuário: " + nome);
+            Toast.makeText(TelaInicialActivity.this, "Nome do usuário: " + nome, Toast.LENGTH_LONG).show();
+
+            // Altera o TextView da tela com o nome do usuário
+            TextView texto = (TextView) findViewById(R.id.textoInicial);
+            texto.setText(nome);
+        }
+
+
+
+
+
 
         // Recupera o botão de sair e vincula um evento de clique
         Button botaoSair = (Button) findViewById(R.id.botaoSair);
