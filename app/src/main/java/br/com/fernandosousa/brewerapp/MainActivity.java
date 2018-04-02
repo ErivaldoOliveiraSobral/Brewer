@@ -15,8 +15,8 @@ public class MainActivity extends DebugActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        ImageView imagem  = (ImageView) findViewById(R.id.imagemLogin);
-        imagem.setImageResource(R.drawable.login_img);
+        //ImageView imagem  = (ImageView) findViewById(R.id.imagemLogin);
+        //imagem.setImageResource(R.drawable.login_img);
 
         TextView texto  = (TextView) findViewById(R.id.mensagemInicio);
         texto.setText(R.string.mensagem_login_activity);
