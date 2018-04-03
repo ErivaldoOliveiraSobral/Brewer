@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,8 +16,8 @@ public class MainActivity extends DebugActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        //ImageView imagem  = (ImageView) findViewById(R.id.imagemLogin);
-        //imagem.setImageResource(R.drawable.login_img);
+        ImageView imagem  = (ImageView) findViewById(R.id.imagemLogin);
+        imagem.setImageResource(R.drawable.login_img);
 
         TextView texto  = (TextView) findViewById(R.id.mensagemInicio);
         texto.setText(R.string.mensagem_login_activity);
@@ -48,6 +49,9 @@ public class MainActivity extends DebugActivity {
                 Bundle params = new Bundle();
                 params.putString("nome", txtUsuario);
                 intent.putExtras(params);
+
+                ProgressBar pb = findViewById(R.id.progressBar);
+                pb.setVisibility(View.VISIBLE);
 
                 // sem resultado
                 //startActivity(intent);

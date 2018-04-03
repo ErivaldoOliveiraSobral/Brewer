@@ -1,63 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:text="@string/mensagem_login"
+        android:id="@+id/mensagemInicio"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mensagemInicio" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/mensagem_login" />
 
     <TextView
-        android:text="Usuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textoUsuario" />
+        android:id="@+id/textoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.5"
+        android:text="Usuario" />
 
 
     <EditText
+        android:id="@+id/campoUsuario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/campoUsuario" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10" />
 
     <TextView
-        android:text="Senha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textoSenha" />
+        android:id="@+id/textoSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.5"
+        android:text="Senha" />
+
     <EditText
+        android:id="@+id/campoSenha"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:ems="10"
-        android:id="@+id/campoSenha" />
-<!--
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imagemLogin" />
--->
+        android:inputType="textPassword" />
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <Button
-            android:text="Login"
+            android:id="@+id/botaoLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/botaoLogin"
             android:stateListAnimator="@null"
-            />
+            android:text="Login" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/imagemLogin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="visible" />
 
     </FrameLayout>
 
